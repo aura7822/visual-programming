@@ -1,0 +1,50 @@
+﻿@page
+@model StudentApplication.Pages.ApplyModel
+@{
+    ViewData["Title"] = "Student Application";
+}
+
+<h2>Student Application Form</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Student.FullName" class="control-label"></label>
+                <input asp-for="Student.FullName" class="form-control" />
+                <span asp-validation-for="Student.FullName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Student.Email" class="control-label"></label>
+                <input asp-for="Student.Email" class="form-control" />
+                <span asp-validation-for="Student.Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Student.Course" class="control-label"></label>
+                <input asp-for="Student.Course" class="form-control" />
+                <span asp-validation-for="Student.Course" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Student.Age" class="control-label"></label>
+                <input asp-for="Student.Age" class="form-control" />
+                <span asp-validation-for="Student.Age" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit Application</button>
+                <a asp-page="/List" class="btn btn-secondary">View All Students</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
