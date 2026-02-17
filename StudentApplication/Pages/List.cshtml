@@ -1,0 +1,31 @@
+﻿@page
+@model StudentApplication.Pages.ListModel
+@{
+    ViewData["Title"] = "Student List";
+}
+
+<h2>Student List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model.Students)
+        {
+            <tr>
+                <td>@student.FullName</td>
+                <td>@student.Email</td>
+                <td>@student.Course</td>
+                <td>@student.Age</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-page="/Apply" class="btn btn-primary">Add New Student</a>
